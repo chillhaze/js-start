@@ -125,8 +125,8 @@
 // }
 // ================================================
 
-// let input = prompt('введите число выше 100');
-// let check = false;
+let input = prompt('введите число выше 100');
+let check = false;
 
 // do {
 //   if (Number(input) <= 100) {
@@ -143,15 +143,21 @@
 //   }
 // } while(check);
 
-// do {
-//   if (Number(input) <= 100) {
-//     check = true;
-//     input = prompt('введите число выше 100');
-//   } else  {
-//     input = prompt(null);
-//     check = false;
-//   }
-// } while(check);
+do {
+  if (input = Number(input)) {
+    if (input <= 100) {
+      input = prompt('введите число выше 100');
+      check = true;
+    } else {
+      input = prompt('спасибо! вы ввели число выше 100');
+      check = false;
+    }
+  } else {
+    input = prompt('!!!введите число!!!');
+    check = true;
+    }
+} while (check);
+
 
 
 
