@@ -69,44 +69,41 @@
 //   console.log(longestWord);
 
 // --------------------------------Модуль 2/22
-let min = 3;
-let max = 10;
+// let min = 3;
+// let max = 10;
 
-  let numbers = [];
-  console.log(numbers);
+//   let numbers = [];
+//   console.log(numbers);
 
-  numbers.push(min);
-  // numbers.push(max);
+//   for (let i = 0; i <= max; i += 1) {
+//       numbers.push(i);
+//   }
 
-  console.table(numbers);
+// console.table(numbers);
 
-  // for (let i = 0; i < max -1; i += 1) {
+// --------------------------------Модуль 2/23
+// 1. создать новый массив
 
-  //     numbers.push(min += 1);
-  // }
+// 2. узнать какие элементы больше чем value
 
-  for (let number of numbers) {
-    if (numbers.length <= number && number < max) {
-      numbers.push(number += 1);
-    }
-    
-    
-  }
+// 3. добавить их в новый масив
+
+let numbers = [10, 20, 30, 11, 6, 8, 9, 14];
+let value = 9;
 console.table(numbers);
 
-// рабочая
-// function createArrayOfNumbers(min, max) {
-//   const numbers = [];
-//   // Пиши код ниже этой строки
-  
-//   numbers.push(min);
-//   for (let number of numbers) {
-    
-//     if (numbers.length <= number && number < max) {
-//       numbers.push(number += 1);
-//     }
-//   }
-  
-//   // Пиши код выше этой строки
-//   return numbers;
-// }
+let newArr = []; 
+
+
+for (let number of numbers) {
+
+  if (number > value && number < 50) {
+    newArr.push(number);
+  }
+}
+console.table(newArr);
+
+
+
+
+
