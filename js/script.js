@@ -24,7 +24,7 @@
 // --------------------------------Модуль 2/13
 // let title = 'Как стать JUNIOR разработчиком за ДВЕ НЕДЕЛИ';
 // console.log(title);
-// let arr = title.toLocaleLowerCase(); 
+// let arr = title.toLocaleLowerCase();
 // console.log(arr);
 // let slugTitle = arr.split(' ');
 // console.log(slugTitle);
@@ -49,7 +49,7 @@
 
 //   if (newArr < maxLength) {
 //     return newArr;
-//   }   
+//   }
 //     return newArr.slice(0,maxLength);
 // }
 
@@ -66,11 +66,11 @@
 //   let longestWord = '';
 //   const arr = string.split(' ');
 //   // console.log(arr);
-  
+
 //   for (let elem of arr) {
 //   	if (elem.length > longestWord.length)
 //       longestWord = elem;
-//   }  
+//   }
 // 	return longestWord;
 // }
 // // console.log(findLongestWord('a, aa, aaa, aaaa, aaaaa, aaaaaaaa')); - быстрый вызов функции
@@ -89,7 +89,7 @@
 //   for (let i = 0; i <= number; i += 1) {
 // 	sum += i;
 //   }
-// 	return sum 
+// 	return sum
 
 //   // Пиши код выше этой строки
 // }
@@ -99,7 +99,7 @@
 //   let total = 0;
 //   // Пиши код ниже этой строки
 // for (let i = 0; i <= order.length-1; i +=1) {
-// 	total += order[i]; 
+// 	total += order[i];
 // }
 //   // Пиши код выше этой строки
 //   return total;
@@ -120,9 +120,9 @@
 //   string = string.split(' ');
 //   console.table(string);
 //   console.log(typeof(string));
-  
+
 //   for (let i = 0; i < string.length; i += 1) {
-    
+
 //     let anyWord = string[i];
 //   	if (anyWord.length > longestWord) {
 //     	longestWord = anyWord;
@@ -155,8 +155,7 @@
 // let value = 9;
 // console.table(numbers);
 
-// let newArr = []; 
-
+// let newArr = [];
 
 // for (let number of numbers) {
 
@@ -178,18 +177,18 @@
 // for (let i = 0; i < array1.length; i += 1) {
 //   if (array2.includes(array1[i])) {
 //     newArray.push(array1[i]);
-//   }   
+//   }
 // }
 // console.log(newArray);
 
 // --------------------------------Модуль 2/25+практика
 // const result = function findSameNumbers(array1, array2) {
 //   let newArray = [];
-  
+
 //   for (let i = 0; i < array1.length; i += 1) {
 //     if (array2.includes(array1[i])) {
 //       newArray.push(array1[i]);
-//     }   
+//     }
 //   }
 //   return newArray;
 //   console.table(newArray);
@@ -258,3 +257,100 @@
 // console.log(typeof(findValue));
 // console.log(findValue);
 
+// // --------------------------------Модуль 2/ функции практика
+// const findSameNumbers = function (
+//   array,
+//   ...args
+// ) {
+//   console.log("array items: ", array);
+//   console.log("args items: ", args);
+
+//   let sameNumrers = [];
+
+//   for (const elem of array) {
+//     if (args.includes(elem)) {
+//       sameNumrers.push(elem);
+//     }
+//   }
+//   return sameNumrers;
+// };
+
+// console.log(
+//   findSameNumbers(
+//     [1, 2, 3, 4, 5],
+//     10,
+//     15,
+//     2,
+//     3,
+//     22
+//   )
+// ); // 2, 3
+// console.log(
+//   findSameNumbers(
+//     [10, 15, 2, 3, 22],
+//     10,
+//     15,
+//     20,
+//     30,
+//     22
+//   )
+// ); // 10, 15, 22
+// console.log(
+//   findSameNumbers(
+//     [100, 200, 300, 400, 500],
+//     10,
+//     15,
+//     200,
+//     300,
+//     22
+//   )
+// ); // 200, 300
+
+// --------------------------------Модуль 2/ функции практика
+// const findSameNumbers = function (
+//   array,
+//   ...args
+// ) {
+//   // console.log("array items: ", array);
+//   // console.log("args items: ", args);
+
+//   let sameNumrers = [];
+
+//   for (const i of array) {
+//     for (const j of args) {
+//       if (j === i) {
+//         sameNumrers.push(j);
+//       }
+//     }
+//   }
+//   return sameNumrers;
+// };
+
+// console.log(
+//   "Unique elements are: ",
+//   findSameNumbers(
+//     ["mango", "poly", "adam"],
+//     "poly",
+//     "chain",
+//     "slava",
+//     "edik"
+//   )
+// ); // 2, 3
+// console.log(
+//   "Unique elements are: ",
+//   findSameNumbers(
+//     ["chain", "slava", "adam"],
+//     "pedro",
+//     "chain",
+//     "slava",
+//     "vitya"
+//   )
+// ); // 10, 15, 22
+// console.log(
+//   "Unique elements are: ",
+//   findSameNumbers(
+//     ["vitya", "java", "katka"],
+//     "pedro",
+//     "java"
+//   )
+// ); // 200, 300
