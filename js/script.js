@@ -559,31 +559,297 @@
 // console.log(getAllPropValues("category"));
 
 // ---------------------------------Модуль 3-19
-const products = [
-  { name: "Радар", price: 1300, quantity: 4 },
-  { name: "Сканер", price: 2700, quantity: 3 },
-  { name: "Дроид", price: 400, quantity: 7 },
-  { name: "Захват", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Радар", price: 1300, quantity: 4 },
+//   { name: "Сканер", price: 2700, quantity: 3 },
+//   { name: "Дроид", price: 400, quantity: 7 },
+//   { name: "Захват", price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalPrice(productName) {
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+//   let totalPrice = 0;
+
+//   for (const product of products) {
+//     // console.log(product.price);
+
+//     let keys = Object.keys(product);
+//     for (const key of keys) {
+//       // console.log(product[key]);
+//       if (product[key] === productName) {
+//         totalPrice = product.price * product.quantity;
+//         // console.log(product.quantity);
+//       }
+//     }
+//   }
+//   return totalPrice;
+//   // Пиши код выше этой строки
+// }
+
+// console.log(calculateTotalPrice("Радар")); //5200
+
+// ---------------------------------Модуль 3-25
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
+// Пиши код ниже этой строки
+// const {
+//   lowToday,
+//   highToday,
+//   todayIcon = "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+// } = forecast.today;
+// console.table(forecast.today);
+//
+// const {
+//   today: {
+//     low: lowToday,
+//     high: highToday,
+//     icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: lowTomorrow,
+//     high: highTomorrow,
+//     icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+//   },
+// } = forecast;
+
+// console.log();
+
+//--------------------------- Корзина товаров
+// const cart = {
+//   items: [],
+
+//   getItems() {
+//     return this.items;
+//     console.log(this.items);
+//   },
+
+//   add(product) {
+//     const { productName, productPrice } = product;
+//     return this.items.push(product);
+//     console.log(productName);
+//   },
+
+//   //доделать remove!
+//   remove(productName) {
+//     const { ...objects } = this.items;
+//     // const values = Object.keys(this.items[itemName]);
+//     console.log(objects);
+
+//     // for (const value of values) {
+//     //   if (value === productName) {
+//     //     removeItemIndex = indexOf(value);
+
+//     //     return this.items.splice(removeItemIndex, 1);
+//     //   }
+//     // }
+//   },
+
+//   clear() {},
+//   countTotalPrice() {
+//     const totalPrice = 0;
+//     for (const price of productPrice) {
+//       totalPrice += price;
+//     }
+//     return totalPrice;
+//   },
+//   increaseQuantity() {},
+//   decreaseQuantity() {},
+// };
+
+// console.table("Позиции в корзине: ", cart.getItems());
+
+// cart.add({ name: "lemon", price: 30 });
+// cart.add({ name: "orange", price: 60 });
+// cart.add({ name: "peach", price: 70 });
+// cart.add({ name: "tomato", price: 10 });
+
+// console.table(cart.getItems());
+
+// cart.remove("orange");
+// console.table(cart.getItems());
+
+// cart.clear();
+// console.table(cart.getItems());
+
+// cart.increaseQuantity("peach");
+// console.table(cart.getItems());
+
+// cart.decreaseQuantity("peach");
+// console.table(cart.getItems());
+
+// console.log("Total: ", cart.countTotalPrice());
+// --------------------------------------------------------Оператор Spread
+// let x = [4, 5, 6];
+// console.log(x);
+
+// const numbers = [1, 2, 3, ...x, 7, 8, 9];
+// console.log(numbers);
+// console.log(Math.max(...numbers));
+
+// ---------------------------------Модуль 3-30
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "Общее";
+//   const priority = "Обычный";
+//   // Пиши код ниже этой строки
+//   const newData = {
+//     category: "Общее",
+//     priority: "Обычный",
+//     ...data,
+//     completed,
+//   };
+//   // в newData важен порядок добавления свойств!!
+//   return newData;
+//   // Пиши код выше этой строки
+// }
+
+// console.log(makeTask());
+// console.log(
+//   makeTask({ category: "Домашнее", priority: "Низкий", text: "Вынести мусор" })
+// );
+
+// ---------------------------------Модуль 3-33
+// Пиши код ниже этой строки
+// function findMatches(firstArray, ...secondArray) {
+//   const matches = []; // Не изменяй эту строку
+//   console.log(firstArray);
+//   console.log(secondArray);
+
+//   // решение №1 - через два цикла for
+//   for (const elem of secondArray) {
+//     if (firstArray.includes(elem)) {
+//       matches.push(elem);
+//     }
+//   }
+//   // решение №2 - через два цикла for
+//   // for (const elem of secondArray) {
+//   //   for (const item of firstArray) {
+//   //     console.log("item is: ", item);
+//   //     if (elem === item) {
+//   //       console.log("equal elem is: ", elem);
+//   //       matches.push(elem);
+//   //     }
+//   //   }
+//   // }
+//   // Пиши код выше этой строки
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)); //[1, 2]
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2)); //[17, 89, 2]
+
+// ---------------------------------Модуль 3-40
+// const atTheOldToad = {
+//   potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
+
+//   updatePotionName(oldName, newName) {
+//     // Пиши код ниже этой строки
+
+//     console.table(this.potions);
+//     let valueIndex = 0;
+
+//     const values = Object.values(this.potions);
+//     // console.log(values);
+
+//     for (const value of values) {
+//       // console.log(value);
+
+//       if (value === oldName) {
+//         valueIndex = this.potions.indexOf(value);
+//         // console.log(valueIndex);
+//         this.potions.splice(valueIndex, 1, newName);
+//       }
+//     }
+//     return this.potions;
+//     // Пиши код выше этой строки
+//   },
+// };
+
+// console.table(atTheOldToad.updatePotionName("Дыхание дракона", "Полиморф")); //['Зелье скорости', 'Полиморф', 'Каменная кожа']
+
+// ---------------------------------Модуль 3-41
+
+const atTheOldToad = {
+  potions: [
+    { name: "Зелье скорости", price: 460 },
+    { name: "Дыхание дракона", price: 780 },
+    { name: "Каменная кожа", price: 520 },
+  ],
   // Пиши код ниже этой строки
-  let totalPrice = 0;
+  getPotions() {
+    return this.potions;
+  },
 
-  for (const product of products) {
-    // console.log(product.price);
+  addPotion(addObject) {
+    // console.log(addObject);
 
-    let keys = Object.keys(product);
-    for (const key of keys) {
-      // console.log(product[key]);
-      if (product[key] === productName) {
-        totalPrice = product.price * product.quantity;
-        // console.log(product.quantity);
+    this.potions.push(addObject);
+
+    return this.potions;
+  },
+
+  removePotion(potionName) {
+    // console.log(potionName);
+
+    let obj = {};
+    let objIndex;
+
+    for (let i = 0; i < this.potions.length; i += 1) {
+      obj = this.potions[i];
+      // console.log(obj);
+      objIndex = this.potions.indexOf(obj);
+      // console.log(objIndex);
+
+      const values = Object.values(obj);
+      // console.log(values);
+
+      for (const value of values) {
+        if (value === potionName) {
+          // console.log(objIndex);
+          let deletedObj = this.potions.splice(objIndex, 1);
+          // console.log(deletedObj);
+        }
       }
     }
-  }
-  return totalPrice;
-  // Пиши код выше этой строки
-}
+    return this.potions;
+  },
 
-console.log(calculateTotalPrice("Радар")); //5200
+  updatePotionName(oldName, newName) {
+    // console.log(`Change '${oldName}' to '${newName}'`);
+
+    let obj = {};
+
+    for (let i = 0; i < this.potions.length; i += 1) {
+      obj = this.potions[i];
+      const { name, price } = obj;
+      // console.log(name, price);
+
+      if (obj.name.includes(oldName)) {
+        obj.name = newName;
+      }
+    }
+
+    return this.potions;
+  },
+  // Пиши код выше этой строки
+};
+
+console.table(atTheOldToad.getPotions());
+console.table(atTheOldToad.addPotion({ name: "Невидимка", price: 620 }));
+// console.log(atTheOldToad.addPotion({ name: "Зелье силы", price: 270 }));
+// console.table(atTheOldToad.getPotions());
+// console.table(atTheOldToad.removePotion("Дыхание дракона"));
+console.table(atTheOldToad.removePotion("Зелье скорости"));
+console.table(atTheOldToad.updatePotionName("Дыхание дракона", "Полиморф"));
+console.table(
+  atTheOldToad.updatePotionName("Каменная кожа", "Зелье неуязвимости")
+);
