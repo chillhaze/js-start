@@ -427,22 +427,155 @@ const users = [
 
 // Задача 21 -----------------------------------------
 // Пиши код ниже этой строки
-const getFriends = users.reduce((friends, user) => {
-  return [...friends, ...user.friends];
-}, []);
-// Пиши код выше этой строки
-console.log(getFriends);
+// const getFriends1 = users.reduce((friends, user) => {
+//   return [...friends, ...user.friends];
+// }, []);
+// // Пиши код выше этой строки
+// console.log("getFriends1 contains: ", getFriends1);
 
-const gt2 = users.reduce((allfriends, user) => {
-  return allfriends + [...user.friends];
-}, []);
-console.log(gt2);
+// const getFriends = (users) => {
+//   const allFriends = users.flatMap((user) => user.friends);
 
-// const numbers = [1, 2, 3, 4, 5, 6];
-// const index = numbers.map((number) => numbers.indexOf(number));
-// console.log(index);
+//   const uniqueFriends = allFriends.filter(
+//     (friend, idx, arr) => arr.indexOf(friend) === idx
+//   );
 
-// const notTotal = numbers.reduce((acc, number) => {
-//   return acc;
-// });
-// console.log(notTotal);
+//   return uniqueFriends;
+// };
+// console.log(getFriends);
+
+// Задача 22 -----------------------------------------
+// const getActiveUsers = (users) => {
+//   return users.filter((user) => {
+//     if (user.isActive) {
+//       return user;
+//     }
+//   });
+// };
+
+// console.log(getActiveUsers(users));
+
+// Задача 23 -----------------------------------------
+// const getInactiveUsers = (users) => {
+//   return users.filter((user) => {
+//     if (!user.isActive) {
+//       return user;
+//     }
+//   });
+// };
+// console.log(getInactiveUsers(users));
+
+// Задача 24 -----------------------------------------
+// const books = [
+//   { title: "Последнее королевство", author: "Бернард Корнуэлл", rating: 8.38 },
+//   { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+//   { title: "Сон смешного человека", author: "Федор Достоевский", rating: 7.75 },
+//   { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+// ];
+// const BOOK_TITLE = "Сон смешного человека";
+// const AUTHOR = "Роберт Шекли";
+// // Пиши код ниже этой строки
+
+// const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find((book) => book.author === AUTHOR);
+
+// Задача 25 -----------------------------------------
+// const getUserWithEmail = (users, email) => {
+//   return users.find((user) => user.email === email);
+// };
+
+// Задача 26 -----------------------------------------
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const eachElementInFirstIsEven = firstArray.every((number) => number % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every((number) => number % 2 !== 0);
+
+// console.log(eachElementInFirstIsEven, eachElementInFirstIsOdd);
+
+// const eachElementInSecondIsEven = secondArray.every(
+//   (number) => number % 2 === 0
+// );
+// const eachElementInSecondIsOdd = secondArray.every(
+//   (number) => number % 2 !== 0
+// );
+// console.log(eachElementInSecondIsEven, eachElementInSecondIsOdd);
+
+// const eachElementInThirdIsEven = thirdArray.every((number) => number % 2 === 0);
+// const eachElementInThirdIsOdd = thirdArray.every((number) => number % 2 !== 0);
+// console.log(eachElementInThirdIsEven, eachElementInThirdIsOdd);
+
+// Задача 27 -----------------------------------------
+// const isEveryUserActive = (users) => {
+//   return users.every((user) => user.isActive);
+// };
+
+// Задача 28 -----------------------------------------
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const anyElementInFirstIsEven = firstArray.some((number) => number % 2 === 0);
+// const anyElementInFirstIsOdd = firstArray.some((number) => number % 2 !== 0);
+
+// const anyElementInSecondIsEven = secondArray.some((number) => number % 2 === 0);
+// const anyElementInSecondIsOdd = secondArray.some((number) => number % 2 !== 0);
+
+// const anyElementInThirdIsEven = thirdArray.some((number) => number % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some((number) => number % 2 !== 0);
+
+// Задача 29 -----------------------------------------
+// const isAnyUserActive = (users) => {
+//   return users.some((user) => user.isActive);
+// };
+
+// Задача 29 -----------------------------------------
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// // Пиши код ниже этой строки
+
+// const totalPlayTime = playtimes.reduce((acc, time) => acc + time);
+
+// // Пиши код выше этой строки
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// Задача 30 -----------------------------------------
+// const players = [
+//   { name: "Манго", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Поли", playtime: 469, gamesPlayed: 2 },
+//   { name: "Аякс", playtime: 690, gamesPlayed: 3 },
+//   { name: "Киви", playtime: 241, gamesPlayed: 1 },
+// ];
+// // Пиши код ниже этой строки
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, player) => {
+//   return acc + player.playtime / player.gamesPlayed;
+// }, 0);
+
+// console.log(totalAveragePlaytimePerGame);
+
+// Задача 31 -----------------------------------------
+// const calculateTotalBalance = (users) => {
+//   return users.reduce((acc, user) => acc + user.balance, 0);
+// };
+
+// console.log(calculateTotalBalance(users));
+
+// Задача 32 -----------------------------------------
+// const getTotalFriendCount = (users) => {
+//   return users.reduce((acc, user) => {
+//     return acc + user.friends.length;
+//   }, 0);
+// };
+
+// console.log(getTotalFriendCount(users));
+
+// Задача 33 -----------------------------------------
